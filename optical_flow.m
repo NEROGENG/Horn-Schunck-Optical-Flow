@@ -50,8 +50,8 @@ for k = 1:num_it
 end
 elasped_time = toc;
 %% Plot
-%quiver(flipud(U), flipud(V));
-img = computeColor(U, V);
-imshow(img);
-writeFlowFile(cat(3, U, V), 'flow10.flo');
+quiver(flipud(U), flipud(V));
+%img = computeColor(U, V);
+%imshow(img);
+%writeFlowFile(cat(3, U, V), 'flow10.flo');
 end
