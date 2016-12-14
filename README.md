@@ -5,9 +5,9 @@ Our goal is to learn the algorithm and compare the performance metrics (time, me
 ## How to Run C++ Implementation
 First, download the OpenCV library from http://opencv.org/downloads.html. Particularly, the optical flow code developed for this repository was created under the following environment:
 
--Windows 8, 64-bit
--Microsoft Visual Studio 2015
--OpenCV 3.0
+- Windows 8, 64-bit
+- Microsoft Visual Studio 2015
+- OpenCV 3.0
 
 To emulate this exact environment, watch the following video (thanks to the user nurimbet!): https://www.youtube.com/watch?v=l4372qtZ4dc
 
