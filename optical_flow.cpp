@@ -8,6 +8,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include <chrono>
 
 using namespace cv;
 using namespace std;
@@ -157,7 +158,10 @@ Mat compute_color(Mat U, Mat V) {
 }
 
 
-void optical_flow_analysis(Mat mat1, Mat mat2, int iterations = 100, int avg_window = 5, int alpha = 1) {
+void optical_flow_analysis(Mat mat1, Mat mat2, int iterations = 100, int avg_window = 5, double alpha = 1) {
+
+	//C++ time elapsed: stackoverflow.com/questions/2808398/easily-measure-elapsed-time
+	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
 	Mat img_gray, img2_gray;
 
@@ -236,6 +240,10 @@ void optical_flow_analysis(Mat mat1, Mat mat2, int iterations = 100, int avg_win
 
 	Mat img = compute_color(U, V);
 
+
+	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+	cout << "The time elapsed is " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() << " milliseconds" << endl;
+
 	string window1 = "First image";
 	string window2 = "Second image";
 	string window3 = "Third image";
@@ -252,10 +260,10 @@ void optical_flow_analysis(Mat mat1, Mat mat2, int iterations = 100, int avg_win
 	waitKey(0);
 }
 
-int main() {
+int main(int argc, char* argv[]) {
 	//read in images
-	Mat img = imread("../images/Army/frame10.png");
-	Mat img2 = imread("../images/Army/frame11.png");
+	Mat img = imread(argv[1]);
+	Mat img2 = imread(argv[2]);
 
 	//if files don't load, exit
 	if (img.empty() || img2.empty())
