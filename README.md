@@ -15,4 +15,4 @@ For other environments, refer to the documentation provided by OpenCV: http://op
 
 Alternatively, for a Windows environment, use the executable and provided .dll file from the `cpp_version` folder to run the optical flow analysis in C++ without the aforementioned dependencies.
 
-Usage: `FILENAME.exe IMAGE1_FILEPATH IMAGE2_FILEPATH`
+**Usage:** `optical_flow.exe IMAGE1_FILEPATH IMAGE2_FILEPATH`
