@@ -2,6 +2,25 @@
 We will implement Horn-Schunk's optical flow algorithm in Matlab and C++. 
 Our goal is to learn the algorithm and compare the performance metrics (time, memory, and etc.) of the two implementations.
 
+## How to Run Matlab Implementation
+First make sure the folder containing the matlab code is added to path. Then simply run the following command:
+
+  `[U, V, elasped_time] = optical_flow();`
+
+This runs the Horn-Schunck optical flow algorithm with default parameters. UI will pop up to let you select the two images.
+
+Alternatively, you can also specify the parameters using:
+
+  `[U, V, elasped_time] = optical_flow(file1, file2, num_it, avg_window, alpha);`
+
+- file1 and file2 are the filenames of the two images.
+
+- num_it is the number of iterations.
+
+- avg_window is the number of columns (also equal to the number of rows) of the averaging kernel.
+
+- alpha is the regularization constant.
+
 ## How to Run C++ Implementation
 First, download the OpenCV library from http://opencv.org/downloads.html. Particularly, the optical flow code developed for this repository was created under the following environment:
 
